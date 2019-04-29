@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Card = ({title, body, id}) => {
+const Card = ({title, body, id, removeIdea}) => {
   return (
     <div>
       <h3>{title}</h3>
       <p>{body}</p>
-      <button>X</button>
+      <button onClick={() => removeIdea(id)}>X</button>
     </div>
   )
 }

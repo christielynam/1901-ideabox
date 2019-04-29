@@ -17,12 +17,18 @@ class App extends Component {
     this.setState({ ideas })
   }
 
+  removeIdea = (id) => {
+    const ideas = this.state.ideas.filter(idea => idea.id !== id)
+    this.setState({ ideas })
+  }
+
   render() {
+    const { ideas } = this.state
     return (
       <div className="App">
         <h1>IdeaBox</h1>
         <IdeaForm addIdea={this.addIdea}/>
-        <IdeaContainer ideas={this.state.ideas}/>
+        <IdeaContainer ideas={ideas} removeIdea={this.removeIdea} />
       </div>
     );
   }
